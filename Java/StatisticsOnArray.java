@@ -5,11 +5,7 @@ public class StatisticsOnArray {
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9};
 
-        int minimum = minValue(arr);
-        System.out.println(minimum);
-
-        int maximum = maxValue(arr);
-        System.out.println(maximum);
+        System.out.println(avg(arr));
     }
 
 
@@ -20,13 +16,11 @@ public class StatisticsOnArray {
         }
 
         int smallest = Integer.MAX_VALUE;
-
         for (int num : arr) {
             if (num < smallest) {
                 smallest = num;
             }
         }
-
         return smallest;
     }
 
@@ -38,13 +32,36 @@ public class StatisticsOnArray {
         }
 
         int largest = Integer.MIN_VALUE;
-
         for (int num : arr) {
             if (num > largest) {
                 largest = num;
             }
         }
-
         return largest;
+    }
+
+
+    // Returns the sum of all integers in an array
+    public static int sum(int[] arr) {
+        if (arr.length == 0) {
+            throw new IllegalArgumentException("Array is empty");
+        }
+
+        int total = 0;
+        for (int n : arr) {
+            total += n;
+        }
+        return total;
+    }
+
+
+    // Returns the average (float) of all integers in an array
+    public static float avg(int[] arr) {
+        if (arr.length == 0) {
+            throw new IllegalArgumentException("Array is empty");
+        }
+
+        int total = sum(arr);
+        return total / arr.length;
     }
 }
