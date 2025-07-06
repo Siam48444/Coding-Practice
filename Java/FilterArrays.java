@@ -1,17 +1,16 @@
 import java.util.Arrays;
+import java.util.ArrayList;
 
 public class FilterArrays {
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9};
 
-        System.out.println(Arrays.toString(evenNumbers(arr)));
-        System.out.println(Arrays.toString(oddNumbers(arr)));
+        System.out.println(Arrays.toString(getEvenNumbersNewVersion(arr)));
+        System.out.println(Arrays.toString(getOddNumbers(arr)));
     }
 
 
-    /* Returns a new array containing all the even numbers in the given array
-    (using normal array operations) */
-    public static int[] evenNumbers(int[] arr) {
+    public static int[] getEvenNumbers(int[] arr) {
         if (arr.length == 0) {
             throw new IllegalArgumentException("Array is empty!");
         }
@@ -37,9 +36,7 @@ public class FilterArrays {
     }
 
 
-    /* Returns a new array containing all the odd numbers in the given array
-    (using normal array operations) */
-    public static int[] oddNumbers(int[] arr) {
+    public static int[] getOddNumbers(int[] arr) {
         if (arr.length == 0) {
             throw new IllegalArgumentException("Array is empty!");
         }
@@ -62,5 +59,29 @@ public class FilterArrays {
             }
         }
         return newArr;
+    }
+
+
+    public static int[] getEvenNumbersNewVersion(int[] arr) {
+        if (arr.length == 0) {
+            throw new IllegalArgumentException("Array is empty!");
+        }
+
+        // Step 1: Use ArrayList to collect even numbers
+        ArrayList<Integer> list = new ArrayList<>();
+        for (int num : arr) {
+            if (num % 2 == 0) {
+                list.add(num);
+            }
+        }
+
+        // Step 2: Convert ArrayList to int[]
+        int[] result = new int[list.size()];
+        for (int i = 0; i < list.size(); i++) {
+            result[i] = list.get(i);
+        }
+
+        // Step 3: Return the array
+        return result;
     }
 }
