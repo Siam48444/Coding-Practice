@@ -3,15 +3,22 @@ import java.util.Arrays;
 
 public class MinMaxInArray {
     public static void main(String[] args) {
-        int[] arr = {5, 8, 12, 3, 9};
+        int[] arr = {};
 
-        int small = minValue(arr);
-        System.out.println(small);
+        int minimum = minValue(arr);
+        System.out.println(minimum);
+
+        int maximum = maxValue(arr);
+        System.out.println(maximum);
     }
 
 
-    // Finds the minimum number is an array
+    // Returns the minimum integer is an array
     public static int minValue(int[] arr) {
+        if (arr.length == 0) {
+            throw new IllegalArgumentException("Array is empty");
+        }
+
         int smallest = Integer.MAX_VALUE;
 
         for (int i = 0; i < arr.length; i++) {
@@ -21,5 +28,23 @@ public class MinMaxInArray {
         }
 
         return smallest;
+    }
+
+
+    // Returns the maximum integer is an array
+    public static int maxValue(int[] arr) {
+        if (arr.length == 0) {
+            throw new IllegalArgumentException("Array is empty");
+        }
+
+        int largest = Integer.MIN_VALUE;
+
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > largest) {
+                largest = arr[i];
+            }
+        }
+
+        return largest;
     }
 }
