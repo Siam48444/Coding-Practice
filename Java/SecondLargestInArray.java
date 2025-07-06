@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 
-public class SecondLargest {
+public class SecondLargestInArray {
     public static void main(String[] args) {
         int[] arr = {5, 8, 12, 3, 9};
 
