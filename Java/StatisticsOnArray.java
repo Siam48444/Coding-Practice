@@ -5,7 +5,11 @@ public class StatisticsOnArray {
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9};
 
-        System.out.println(avg(arr));
+        System.out.println("Array   : " + Arrays.toString(arr));
+        System.out.println("Minimum : " + minValue(arr));
+        System.out.println("Maximum : " + maxValue(arr));
+        System.out.println("Sum     : " + sum(arr));
+        System.out.printf("Average: %.2f %n", avg(arr));
     }
 
 
