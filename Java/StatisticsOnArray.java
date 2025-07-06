@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 
-public class MinMaxInArray {
+public class StatisticsOnArray {
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9};
 
@@ -13,7 +13,7 @@ public class MinMaxInArray {
     }
 
 
-    // Returns the minimum integer is an array
+    // Returns the minimum integer in an array
     public static int minValue(int[] arr) {
         if (arr.length == 0) {
             throw new IllegalArgumentException("Array is empty");
@@ -31,7 +31,7 @@ public class MinMaxInArray {
     }
 
 
-    // Returns the maximum integer is an array
+    // Returns the maximum integer in an array
     public static int maxValue(int[] arr) {
         if (arr.length == 0) {
             throw new IllegalArgumentException("Array is empty");
