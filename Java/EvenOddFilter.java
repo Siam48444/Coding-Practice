@@ -1,12 +1,12 @@
 import java.util.Arrays;
 import java.util.ArrayList;
 
-public class FilterArrays {
+public class EvenOddFilter {
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9};
 
         System.out.println(Arrays.toString(getEvenNumbersNewVersion(arr)));
-        System.out.println(Arrays.toString(getOddNumbers(arr)));
+        System.out.println(Arrays.toString(getOddNumbersNewVersion(arr)));
     }
 
 
@@ -71,6 +71,30 @@ public class FilterArrays {
         ArrayList<Integer> list = new ArrayList<>();
         for (int num : arr) {
             if (num % 2 == 0) {
+                list.add(num);
+            }
+        }
+
+        // Step 2: Convert ArrayList to int[]
+        int[] result = new int[list.size()];
+        for (int i = 0; i < list.size(); i++) {
+            result[i] = list.get(i);
+        }
+
+        // Step 3: Return the array
+        return result;
+    }
+
+
+    public static int[] getOddNumbersNewVersion(int[] arr) {
+        if (arr.length == 0) {
+            throw new IllegalArgumentException("Array is empty!");
+        }
+
+        // Step 1: Use ArrayList to collect odd numbers
+        ArrayList<Integer> list = new ArrayList<>();
+        for (int num : arr) {
+            if (num % 2 != 0) {
                 list.add(num);
             }
         }
