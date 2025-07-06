@@ -61,7 +61,7 @@ public class StatisticsOnArray {
             throw new IllegalArgumentException("Array is empty");
         }
 
-        int total = sum(arr);
+        float total = sum(arr);
         return total / arr.length;
     }
 }
