@@ -4,6 +4,7 @@ public class MiniCalculator {
         subtract(5, 6);
         multiply(5, 6);
         divide(5, 6);
+        modulo(5, 6);
     }
 
 
@@ -28,9 +29,20 @@ public class MiniCalculator {
     // Divides two valid integers
     public static void divide(int a, int b) {
         if (b != 0) {
-            double x = (double) a;
-            double y = (double) b;
-            System.out.printf("%d / %d = %f %n", a, b, x / y);
+            double x = a;
+            double y = b;
+            System.out.printf("%d / %d = %.3f %n", a, b, x / y);
+        }
+        else {
+            System.out.println("Division by zero is not allowed.");
+        }
+    }
+
+
+    // Finds the remainder when the first integer is divided by the second one
+    public static void modulo(int a, int b) {
+        if (b != 0) {
+            System.out.printf("%d %% %d = %d %n", a, b, a % b);
         }
         else {
             System.out.println("Division by zero is not allowed.");
