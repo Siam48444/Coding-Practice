@@ -20,11 +20,15 @@ public class VirtualPet {
     }
 
     public void passTime() {
-        this.hunger += 1;
-        this.happiness -= 1;
+        if (this.hunger < 10) {
+            this.hunger += 1;
+        }
+        if (this.happiness > 0) {
+            this.happiness -= 1;
+        }
     }
 
     public void status() {
-        System.out.printf("Name: %s\nHunger: %s\nHappiness: %s", this.name, this.hunger, this.happiness);
+        System.out.printf("Name      : %s\nHunger    : %s\nHappiness : %s", this.name, this.hunger, this.happiness);
     }
 }
