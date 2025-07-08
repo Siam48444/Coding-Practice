@@ -4,6 +4,7 @@ public class MainPet {
         
         pet1.feed();
         pet1.play();
+
         pet1.status();
     }
 }
