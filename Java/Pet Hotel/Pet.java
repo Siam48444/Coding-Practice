@@ -36,14 +36,8 @@ public class Pet {
     }
 
     public String toString() {
-        return
-            String.format("+-----------+----------------+\n") +
-            String.format("| %-9s | %-14s |\n", "Property", "Value") +
-            String.format("+-----------+----------------+\n") +
-            String.format("| %-9s | %-14s |\n", "Name", this.name) +
-            String.format("| %-9s | %-14s |\n", "Type", this.type) +
-            String.format("| %-9s | %-14d |\n", "Hunger", this.hunger) +
-            String.format("| %-9s | %-14d |\n", "Happiness", this.happiness) +
-            String.format("+-----------+----------------+\n");
+        return 
+            String.format("Name      : %s\nType      : %s\nHunger    : %d\nHappiness : %d", 
+            this.name, this.type, this.hunger, this.happiness);
     }
 }
