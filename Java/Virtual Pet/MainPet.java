@@ -3,8 +3,10 @@ public class MainPet {
         VirtualPet pet1 = new VirtualPet("Tom");
         
         pet1.play();
-        pet1.passTime();
         pet1.feed();
+        pet1.passTime();
+        pet1.play();
+        
         pet1.status();
     }
 }
