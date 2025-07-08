@@ -9,6 +9,7 @@ public class Pet {
         this.type = type;
     }
 
+
     public String getName() {
         return this.name;
     }
@@ -17,5 +18,32 @@ public class Pet {
         return this.type;
     }
 
-    
+    public int getHunger() {
+        return this.hunger;
+    }
+
+    public int getHappiness() {
+        return this.happiness;
+    }
+
+
+    public void feed() {
+        if (this.hunger > 0) this.hunger--;
+    }
+
+    public void play() {
+        if (this.happiness < 10) this.happiness++;
+    }
+
+    public String toString() {
+        return
+            String.format("+-----------+----------------+\n") +
+            String.format("| %-9s | %-14s |\n", "Property", "Value") +
+            String.format("+-----------+----------------+\n") +
+            String.format("| %-9s | %-14s |\n", "Name", this.name) +
+            String.format("| %-9s | %-14s |\n", "Type", this.type) +
+            String.format("| %-9s | %-14d |\n", "Hunger", this.hunger) +
+            String.format("| %-9s | %-14d |\n", "Happiness", this.happiness) +
+            String.format("+-----------+----------------+\n");
+    }
 }
