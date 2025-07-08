@@ -29,6 +29,13 @@ public class VirtualPet {
     }
 
     public void status() {
-        System.out.printf("Name      : %s\nHunger    : %s\nHappiness : %s\n", this.name, this.hunger, this.happiness);
+        String line = "--------------------";
+        System.out.println(line);
+        System.out.println("    Pet Status");
+        System.out.println(line);
+        System.out.println("Name      : " + this.name);
+        System.out.println("Hunger    : " + this.hunger);
+        System.out.println("Happiness : " + this.happiness);
+        System.out.println(line);
     }
 }
