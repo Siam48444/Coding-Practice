@@ -7,6 +7,9 @@ public class Hotel {
 
     public void addPet(Pet pet) {
         pets.add(pet);
-        System.out.println(pet.getName() + " has checked in.");
+    }
+
+    public void removePetByName(Pet name) {
+        pets.removeIf(p -> p.getName().equals(name));
     }
 }
