@@ -1,10 +1,11 @@
 class MainHotel {
     public static void main(String[] args) {
+        Hotel hotel = new Hotel();
+
         Pet p1 = new Pet("Tom", "Cat");
-        
-        p1.feed();
-        p1.play();
-        
-        System.out.println(p1.toString());
+        Pet p2 = new Pet("Garfield", "Cat");
+
+        hotel.addPet(p1);
+        hotel.addPet(p2);
     }
 }
