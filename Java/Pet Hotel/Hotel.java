@@ -23,7 +23,17 @@ public class Hotel {
         }
     }
 
-    // public void feedAllPets() {
+    public void feedAllPets() {
+        for (Pet p : pets) {
+            p.feed();
+        }
+    }
 
-    // }
+    public void feedPetByName(String name) {
+        for (Pet p : pets) {
+            if (p.getName() == name) {
+                p.feed();
+            }
+        }
+    }
 }
