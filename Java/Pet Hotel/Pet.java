@@ -33,7 +33,7 @@ public class Pet {
         if (this.happiness < 10) this.happiness++;
     }
 
-    public String toString() {
+    public String status() {
         return 
             String.format("Name      : %s\nType      : %s\nHunger    : %d\nHappiness : %d", 
             this.name, this.type, this.hunger, this.happiness);

@@ -12,4 +12,18 @@ public class Hotel {
     public void removePetByName(String name) {
         pets.removeIf(p -> p.getName().equals(name));
     }
+
+    public void removeAllPets() {
+        pets.clear();
+    }
+
+    public void showAllPets() {
+        for (Pet p : pets) {
+            System.out.println(p);
+        }
+    }
+
+    // public void feedAllPets() {
+
+    // }
 }
