@@ -9,30 +9,37 @@ public class Pet {
         this.type = type;
     }
 
+    // Get the pet's name
     public String getName() {
         return this.name;
     }
 
+    // Return the pet's type
     public String getType() {
         return this.type;
     }
 
+    // Return current hunger level
     public int getHunger() {
         return this.hunger;
     }
 
+    // Return current happiness level
     public int getHappiness() {
         return this.happiness;
     }
 
+    // Feed the pet to reduce hunger by 1 (not below 0)
     public void feed() {
         if (this.hunger > 0) this.hunger--;
     }
 
+    // Play with the pet to increase happiness by 1 (up to 10)
     public void play() {
         if (this.happiness < 10) this.happiness++;
     }
 
+    // Return a formatted status string of the pet's details
     public String status() {
         return 
             String.format("Name      : %s\nType      : %s\nHunger    : %d\nHappiness : %d", 
