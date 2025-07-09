@@ -36,4 +36,18 @@ public class Hotel {
             }
         }
     }
+
+    public void playWithAllPets() {
+        for (Pet p : pets) {
+            p.play();
+        }
+    }
+
+    public void playWithPetByName(String name) {
+        for (Pet p : pets) {
+            if (p.getName() == name) {
+                p.play();
+            }
+        }
+    }
 }

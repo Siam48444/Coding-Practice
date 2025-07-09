@@ -10,7 +10,6 @@ class MainHotel {
         hotel.addPet(p2);
         hotel.addPet(p3);
 
-        hotel.feedPetByName("Tom");
         hotel.showAllPets();
     }
 }
