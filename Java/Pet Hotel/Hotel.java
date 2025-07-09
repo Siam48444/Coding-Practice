@@ -9,7 +9,7 @@ public class Hotel {
         pets.add(pet);
     }
 
-    public void removePetByName(Pet name) {
+    public void removePetByName(String name) {
         pets.removeIf(p -> p.getName().equals(name));
     }
 }

@@ -9,7 +9,6 @@ public class Pet {
         this.type = type;
     }
 
-
     public String getName() {
         return this.name;
     }
@@ -25,7 +24,6 @@ public class Pet {
     public int getHappiness() {
         return this.happiness;
     }
-
 
     public void feed() {
         if (this.hunger > 0) this.hunger--;
