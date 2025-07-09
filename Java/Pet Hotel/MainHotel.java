@@ -11,7 +11,6 @@ class MainHotel {
         hotel.feedAllPets();
         hotel.playWithPetByName("Buddy");
 
-
         hotel.removePetByName("Whiskers");
         hotel.showAllPets();
     }

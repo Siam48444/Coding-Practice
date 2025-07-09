@@ -40,6 +40,7 @@ public class Pet {
     }
 
     // Return a formatted status string of the pet's details
+    @Override
     public String toString() {
         String line = "---------------------";
         return 
