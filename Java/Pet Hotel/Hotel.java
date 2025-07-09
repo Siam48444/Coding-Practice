@@ -17,12 +17,6 @@ public class Hotel {
         pets.clear();
     }
 
-    public void showAllPets() {
-        for (Pet p : pets) {
-            System.out.println(p);
-        }
-    }
-
     public void feedAllPets() {
         for (Pet p : pets) {
             p.feed();
@@ -31,9 +25,10 @@ public class Hotel {
 
     public void feedPetByName(String name) {
         for (Pet p : pets) {
-            if (p.getName() == name) {
+            if (p.getName().equals(name)) {
                 p.feed();
             }
+            return;
         }
     }
 
@@ -45,9 +40,16 @@ public class Hotel {
 
     public void playWithPetByName(String name) {
         for (Pet p : pets) {
-            if (p.getName() == name) {
+            if (p.getName().equals(name)) {
                 p.play();
             }
+            return;
+        }
+    }
+
+    public void showAllPets() {
+        for (Pet p : pets) {
+            System.out.println(p);
         }
     }
 }
