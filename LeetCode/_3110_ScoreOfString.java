@@ -1,4 +1,4 @@
-public class _3110_ScoreOfString {
+class _3110_ScoreOfString {
     public static void main(String[] args) {
         String s = "hello";
         System.out.println(scoreOfString(s));

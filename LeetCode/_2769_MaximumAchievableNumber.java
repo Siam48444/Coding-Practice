@@ -1,4 +1,4 @@
-public class _2769_MaximumAchievableNumber {
+class _2769_MaximumAchievableNumber {
     public static void main(String[] args) {
         System.out.println(theMaximumAchievableX(4, 1));
         System.out.println(theMaximumAchievableX(3, 2));
