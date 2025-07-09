@@ -11,7 +11,12 @@ public class Hotel {
 
     // Remove a pet from the hotel by its name
     public void removePetByName(String name) {
-        pets.removeIf(p -> p.getName().equals(name));
+        boolean removed = pets.removeIf(p -> p.getName().equals(name));
+        if (removed) {
+            System.out.println("==> " + name + " has been checked out.");
+        } else {
+            System.out.println("==> " + name + " was not found.");
+        }
     }
 
     // Remove all pets from the hotel
@@ -31,9 +36,10 @@ public class Hotel {
         for (Pet p : pets) {
             if (p.getName().equals(name)) {
                 p.feed();
-                return;  // Stop searching after feeding the pet
+                return;
             }
         }
+        System.out.println("==> " + name + " not found to feed.");
     }
 
     // Play with every pet in the hotel
@@ -48,9 +54,10 @@ public class Hotel {
         for (Pet p : pets) {
             if (p.getName().equals(name)) {
                 p.play();
-                return;  // Stop searching after playing with the pet
+                return;
             }
         }
+        System.out.println("==> " + name + " not found to play with.");
     }
 
     // Display info for all pets in the hotel
