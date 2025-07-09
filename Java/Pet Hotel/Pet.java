@@ -40,9 +40,10 @@ public class Pet {
     }
 
     // Return a formatted status string of the pet's details
-    public String status() {
+    public String toString() {
+        String line = "---------------------";
         return 
-            String.format("Name      : %s\nType      : %s\nHunger    : %d\nHappiness : %d", 
-            this.name, this.type, this.hunger, this.happiness);
+            String.format("%s\nName      : %s\nType      : %s\nHunger    : %d\nHappiness : %d\n%s", 
+            line, this.name, this.type, this.hunger, this.happiness, line);
     }
 }
