@@ -10,13 +10,23 @@ public class MyLinkedList {
         }
     }
 
+
     // Define the head and tail pointers
     private Node head = null;
     private Node tail = null;
 
+
     // Method to add a node at the beginning
     public void addFirst(String data) {
+        Node newNode = new Node(data);
 
+        if (!this.head) {
+            this.head = this.tail = newNode;
+        } 
+        else {
+            newNode.next = this.head;
+            this.head = newNode;
+        }
     }
 
 
