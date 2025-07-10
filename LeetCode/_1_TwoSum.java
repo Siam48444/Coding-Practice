@@ -25,7 +25,7 @@ class _1_TwoSum {
 
     // Time Complexity = O(), Space Complexity = O()
     public static int[] twoSum_2(int[] nums, int target) {
-        HashMap<Integer, Integer> map = new HashMap<>();
+        HashMap<Integer, Integer> map = new HashMap<>();   // value -> index
 
         for (int i = 0; i < nums.length; i++) {
             int complement = target - nums[i];
