@@ -20,7 +20,7 @@ public class MyLinkedList {
     public void addFirst(String data) {
         Node newNode = new Node(data);
 
-        if (!this.head) {
+        if (this.head == null) {
             this.head = this.tail = newNode;
         } 
         else {
@@ -34,5 +34,9 @@ public class MyLinkedList {
 
     public static void main(String[] args) {
         MyLinkedList ll = new MyLinkedList();
+
+        ll.addFirst(1);
+        ll.addFirst(2);
+        ll.addFirst(3);
     }
 }
