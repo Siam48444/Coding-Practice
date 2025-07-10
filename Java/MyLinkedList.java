@@ -1,16 +1,19 @@
 class Node {
     String data;
-    Node next;
+    Node next = null;
 
     Node(String data) {
         this.data = data;
-        this.next = null;
     }
 }
 
 
 public class MyLinkedList {
-    public static void main(String[] args) {
 
+
+
+
+    public static void main(String[] args) {
+        MyLinkedList ll = new MyLinkedList();
     }
 }
