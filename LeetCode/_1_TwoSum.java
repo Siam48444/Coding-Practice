@@ -19,11 +19,12 @@ class _1_TwoSum {
                 }
             }
         }
+        
         return new int[] {};
     }
 
 
-    // Time Complexity = O(), Space Complexity = O()
+    // Time Complexity = O(n), Space Complexity = O(n)
     public static int[] twoSum_2(int[] nums, int target) {
         HashMap<Integer, Integer> map = new HashMap<>();   // value -> index
 
@@ -33,8 +34,9 @@ class _1_TwoSum {
             if (map.containsKey(complement)) {
                 return new int[] {map.get(complement), i};
             }
-
-            map.put(nums[i], i);
+            else {
+                map.put(nums[i], i);
+            }
         }
 
         return new int[] {};
