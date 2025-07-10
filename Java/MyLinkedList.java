@@ -20,13 +20,19 @@ public class MyLinkedList {
     public void addFirst(String data) {
         Node newNode = new Node(data);
 
-        if (this.head == null) {
-            this.head = this.tail = newNode;
+        if (head == null) {
+            head = tail = newNode;
         } 
         else {
-            newNode.next = this.head;
-            this.head = newNode;
+            newNode.next = head;
+            head = newNode;
         }
+    }
+
+
+    // Method to add a node at the end
+    public void addLast(String data) {
+        
     }
 
 
@@ -35,8 +41,8 @@ public class MyLinkedList {
     public static void main(String[] args) {
         MyLinkedList ll = new MyLinkedList();
 
-        ll.addFirst(1);
-        ll.addFirst(2);
-        ll.addFirst(3);
+        ll.addFirst("1");
+        ll.addFirst("2");
+        ll.addFirst("3");
     }
 }
