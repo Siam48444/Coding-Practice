@@ -67,9 +67,9 @@ public class MyLinkedList<T> {
     public static void main(String[] args) {
         MyLinkedList<Integer> ll = new MyLinkedList<>();
 
-        ll.addLast(1);
-        ll.addLast(2);
-        ll.addLast(3);
+        for (int i = 0; i < 10; i++) {
+            ll.addLast(i + 1);
+        }
 
         ll.printList();
     }
