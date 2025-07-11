@@ -1,10 +1,10 @@
-public class MyLinkedList {
+public class MyLinkedList<T> {
     // Node class
     private class Node {
-        String data;
+        T data;
         Node next;
 
-        Node(String data) {
+        Node(T data) {
             this.data = data;
             this.next = null;
         }
@@ -17,7 +17,7 @@ public class MyLinkedList {
 
 
     // Adds a node at the beginning
-    public void addFirst(String data) {
+    public void addFirst(T data) {
         Node newNode = new Node(data);
 
         if (head == null) {
@@ -31,7 +31,7 @@ public class MyLinkedList {
 
 
     // Adds a node at the end
-    public void addLast(String data) {
+    public void addLast(T data) {
         Node newNode = new Node(data);
 
         if (head == null) {
@@ -65,11 +65,11 @@ public class MyLinkedList {
 
 
     public static void main(String[] args) {
-        MyLinkedList ll = new MyLinkedList();
+        MyLinkedList<Integer> ll = new MyLinkedList<>();
 
-        ll.addLast("1");
-        ll.addLast("2");
-        ll.addLast("3");
+        ll.addLast(1);
+        ll.addLast(2);
+        ll.addLast(3);
 
         ll.printList();
     }
