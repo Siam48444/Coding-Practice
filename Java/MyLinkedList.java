@@ -57,6 +57,9 @@ public class MyLinkedList<T> {
         if (head == null) {
             System.out.println("List is empty!");
         }
+        else if (head == tail) {
+            head = tail = null;
+        }
         else {
             Node curr = head;
             while (curr.next != tail) {
