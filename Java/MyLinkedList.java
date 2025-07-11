@@ -18,7 +18,6 @@ public class MyLinkedList<T> {
     // Adds a node at the beginning
     public void addFirst(T data) {
         Node newNode = new Node(data);
-
         if (head == null) {
             head = tail = newNode;
         } 
@@ -32,7 +31,6 @@ public class MyLinkedList<T> {
     // Adds a node at the end
     public void addLast(T data) {
         Node newNode = new Node(data);
-
         if (head == null) {
             head = tail = newNode;
         }
@@ -52,6 +50,22 @@ public class MyLinkedList<T> {
             head = head.next;
         }
     }
+
+
+    // Deletes the last node
+    public void deleteLast() {
+        if (head == null) {
+            System.out.println("List is empty!");
+        }
+        else {
+            Node curr = head;
+            while (curr.next != tail) {
+                curr = curr.next;
+            }
+            curr.next = null;
+            tail = curr;
+        }
+    }    
 
 
     // Prints the linked list
