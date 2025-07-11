@@ -1,6 +1,6 @@
 public class MyLinkedList {
     // Node class
-    class Node {
+    private class Node {
         String data;
         Node next;
 
@@ -10,11 +10,9 @@ public class MyLinkedList {
         }
     }
 
-
     // Define the head and tail pointers
     private Node head = null;
     private Node tail = null;
-
 
     // Method to add a node at the beginning
     public void addFirst(String data) {
@@ -29,11 +27,19 @@ public class MyLinkedList {
         }
     }
 
-
     // Method to add a node at the end
     public void addLast(String data) {
-        
+        Node newNode = new Node(data);
+
+        if (head == null) {
+            head = tail = newNode;
+        }
+        else {
+            tail.next = newNode;
+            tail = newNode;
+        }
     }
+
 
 
 
