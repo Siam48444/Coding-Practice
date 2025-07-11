@@ -46,18 +46,23 @@ public class MyLinkedList<T> {
 
     // Prints the linked list
     public void printList() {
-        Node curr = head;
-        String seperator = ", ";
-
-        while (curr != null) {
-            System.out.print(curr.data);
-            if (curr.next != null) {
-                // only add comma if there's a next node
-                System.out.print(seperator);  
-            }
-            curr = curr.next;
+        if (head == null) {
+            System.out.println("List is empty!");
         }
-        System.out.println();
+        else {
+            Node curr = head;
+            String seperator = ", ";
+
+            while (curr != null) {
+                System.out.print(curr.data);
+                if (curr.next != null) {
+                    // only add comma if there's a next node
+                    System.out.print(seperator);  
+                }
+                curr = curr.next;
+            }
+            System.out.println();
+        }
     }
 
 
