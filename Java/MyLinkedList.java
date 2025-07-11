@@ -15,7 +15,7 @@ public class MyLinkedList<T> {
     private Node tail = null;
 
 
-    // Adds a node at the beginning
+    // Adds a node at the beginning = O(1)
     public void addFirst(T data) {
         Node newNode = new Node(data);
         if (head == null) {
@@ -28,7 +28,7 @@ public class MyLinkedList<T> {
     }
 
 
-    // Adds a node at the end
+    // Adds a node at the end = O(1)
     public void addLast(T data) {
         Node newNode = new Node(data);
         if (head == null) {
@@ -41,7 +41,7 @@ public class MyLinkedList<T> {
     }
 
 
-    // Deletes the first node
+    // Deletes the first node = O(1)
     public void deleteFirst() {
         if (head == null) {
             System.out.println("List is empty!");
@@ -52,7 +52,7 @@ public class MyLinkedList<T> {
     }
 
 
-    // Deletes the last node
+    // Deletes the last node = O(n)
     public void deleteLast() {
         if (head == null) {
             System.out.println("List is empty!");
@@ -71,7 +71,7 @@ public class MyLinkedList<T> {
     }    
 
 
-    // Prints the linked list
+    // Prints the linked list = O(n)
     public void printList() {
         if (head == null) {
             System.out.println("List is empty!");
