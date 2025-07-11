@@ -10,7 +10,6 @@ public class MyLinkedList<T> {
         }
     }
 
-
     // Define the head and tail pointers
     private Node head = null;
     private Node tail = null;
@@ -40,6 +39,17 @@ public class MyLinkedList<T> {
         else {
             tail.next = newNode;
             tail = newNode;
+        }
+    }
+
+
+    // Deletes the first node
+    public void deleteFirst() {
+        if (head == null) {
+            System.out.println("List is empty!");
+        }
+        else {
+            head = head.next;
         }
     }
 
