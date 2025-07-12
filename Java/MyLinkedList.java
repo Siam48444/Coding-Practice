@@ -10,14 +10,18 @@ public class MyLinkedList<T> {
         }
     }
 
-    // Define the head and tail pointers
+
+    // Define the head and tail pointers, and size tracker
     private Node head = null;
     private Node tail = null;
+    private int size = 0;
 
 
     // Adds a node at the beginning = O(1)
     public void addFirst(T data) {
         Node newNode = new Node(data);
+        size++;
+
         if (head == null) {
             head = tail = newNode;
         } 
@@ -31,6 +35,8 @@ public class MyLinkedList<T> {
     // Adds a node at the end = O(1)
     public void addLast(T data) {
         Node newNode = new Node(data);
+        size++;
+
         if (head == null) {
             head = tail = newNode;
         }
@@ -48,6 +54,7 @@ public class MyLinkedList<T> {
         }
         else {
             head = head.next;
+            size--;
         }
     }
 
@@ -59,9 +66,12 @@ public class MyLinkedList<T> {
         }
         else if (head == tail) {
             head = tail = null;
+            size--;
         }
         else {
             Node curr = head;
+            size--;
+
             while (curr.next != tail) {
                 curr = curr.next;
             }
@@ -92,6 +102,12 @@ public class MyLinkedList<T> {
         else {
             return tail.data;
         }
+    }
+
+
+    // Returns the size of the linked list = O(1)
+    public int size() {
+        return size;
     }
 
 
@@ -128,7 +144,6 @@ public class MyLinkedList<T> {
         }
 
         ll.printList();
-        System.out.println(ll.getFirst());
-        System.out.println(ll.getLast());
+        System.out.println(ll.size());
     }
 }
