@@ -47,6 +47,12 @@ public class MyLinkedList<T> {
     }
 
 
+    // Adds a node at specified index
+    public void add(int index) {
+        
+    }
+
+
     // Deletes the first node = O(1)
     public void deleteFirst() {
         if (head == null) {
