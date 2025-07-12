@@ -70,13 +70,12 @@ public class MyLinkedList<T> {
         }
         else {
             Node curr = head;
-            size--;
-
             while (curr.next != tail) {
                 curr = curr.next;
             }
             curr.next = null;
             tail = curr;
+            size--;
         }
     }    
 
