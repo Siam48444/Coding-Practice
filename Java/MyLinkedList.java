@@ -55,10 +55,12 @@ public class MyLinkedList<T> {
         if (index == 0) {
             addFirst(data);
         }
-        else if (index == size - 1) {
+        else if (index == size) {
             addLast(data);
         }
-
+        else {
+            
+        }
         size++;
     }
 
