@@ -20,8 +20,6 @@ public class MyLinkedList<T> {
     // Adds a node at the beginning = O(1)
     public void addFirst(T data) {
         Node newNode = new Node(data);
-        size++;
-
         if (head == null) {
             head = tail = newNode;
         } 
@@ -29,14 +27,13 @@ public class MyLinkedList<T> {
             newNode.next = head;
             head = newNode;
         }
+        size++;
     }
 
 
     // Adds a node at the end = O(1)
     public void addLast(T data) {
         Node newNode = new Node(data);
-        size++;
-
         if (head == null) {
             head = tail = newNode;
         }
@@ -44,12 +41,25 @@ public class MyLinkedList<T> {
             tail.next = newNode;
             tail = newNode;
         }
+        size++;
     }
 
 
     // Adds a node at specified index
-    public void add(int index) {
+    public void add(int index, T data) {
+        if (index < 0 || index > size) {
+            throw new IndexOutOfBoundsException("Invalid index " + index);
+            return;
+        }
         
+        if (index == 0) {
+            addFirst(data);
+        }
+        else if (index == size - 1) {
+            addLast(data);
+        }
+
+        size++;
     }
 
 
@@ -145,7 +155,7 @@ public class MyLinkedList<T> {
         MyLinkedList<Integer> ll = new MyLinkedList<>();
 
         for (int i = 0; i < 10; i++) {
-            ll.addLast(i + 1);
+            ll.addLast(i);
         }
 
         ll.printList();
