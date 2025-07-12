@@ -154,6 +154,30 @@ public class MyLinkedList<T> {
     }
 
 
+    // Returns the element at specified index --> O(n)
+    public T get(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Invalid index " + index);
+        }
+        
+        if (index == 0) {
+            return getFirst();
+        }
+        else if (index == size - 1) {
+            return getLast();
+        }
+        else {
+            Node curr = head;
+            
+            for (int i = 0; i < index; i++) {
+                curr = curr.next;
+            }
+            
+            return curr.data;
+        }
+    }
+
+
     // Returns the size of the linked list --> O(1)
     public int size() {
         return size;
