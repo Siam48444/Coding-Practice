@@ -59,7 +59,7 @@ public class MyLinkedList<T> {
             addLast(data);
         }
         else {
-            
+            Node newNode = new Node(data);
         }
         size++;
     }
