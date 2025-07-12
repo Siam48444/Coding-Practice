@@ -71,6 +71,30 @@ public class MyLinkedList<T> {
     }    
 
 
+    // Returns the first element = O(1)
+    public T getFirst() {
+        if (head == null) {
+            System.out.println("List is empty!");
+            return null;
+        }
+        else {
+            return head.data;
+        }
+    }
+
+    
+    // Returns the last element = O(1)
+    public T getLast() {
+        if (head == null) {
+            System.out.println("List is empty!");
+            return null;
+        }
+        else {
+            return tail.data;
+        }
+    }
+
+
     // Prints the linked list = O(n)
     public void printList() {
         if (head == null) {
@@ -104,5 +128,7 @@ public class MyLinkedList<T> {
         }
 
         ll.printList();
+        System.out.println(ll.getFirst());
+        System.out.println(ll.getLast());
     }
 }
