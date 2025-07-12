@@ -105,6 +105,31 @@ public class MyLinkedList<T> {
     }    
 
 
+    // Deletes a node at specified index --> O(n)
+    public void delete(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Invalid index " + index);
+        }
+        
+        if (index == 0) {
+            deleteFirst();
+        }
+        else if (index == size - 1) {
+            deleteLast();
+        }
+        else {
+            Node curr = head;
+            
+            for (int i = 0; i < index - 1; i++) {
+                curr = curr.next;
+            }
+            
+            curr.next = curr.next.next;
+            size--;
+        }
+    }
+
+
     // Returns the first element --> O(1)
     public T getFirst() {
         if (head == null) {
