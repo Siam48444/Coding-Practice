@@ -1,12 +1,13 @@
-import java.awt.Color;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
+import java.awt.*;
+import javax.swing.*;
 
 
 public class Swing {
     public static void main(String[] args) {
         JLabel label = new JLabel();
         label.setText("Sabah Al Siam");
+        label.setFont(new Font("JetBrainsMono NF", Font.PLAIN, 40));
+        label.setForeground(new Color(0x000000));
 
         JFrame frame = new JFrame();
         frame.setTitle("My First Swing");
