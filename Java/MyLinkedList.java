@@ -17,7 +17,7 @@ public class MyLinkedList<T> {
     private int size = 0;
 
 
-    // Adds a node at the beginning = O(1)
+    // Adds a node at the beginning --> O(1)
     public void addFirst(T data) {
         Node newNode = new Node(data);
         if (head == null) {
@@ -31,7 +31,7 @@ public class MyLinkedList<T> {
     }
 
 
-    // Adds a node at the end = O(1)
+    // Adds a node at the end --> O(1)
     public void addLast(T data) {
         Node newNode = new Node(data);
         if (head == null) {
@@ -45,11 +45,10 @@ public class MyLinkedList<T> {
     }
 
 
-    // Adds a node at specified index
+    // Adds a node at specified index --> O(n)
     public void add(int index, T data) {
         if (index < 0 || index > size) {
             throw new IndexOutOfBoundsException("Invalid index " + index);
-            return;
         }
         
         if (index == 0) {
@@ -60,12 +59,20 @@ public class MyLinkedList<T> {
         }
         else {
             Node newNode = new Node(data);
+            Node curr = head;
+            
+            for (int i = 0; i < index - 1; i++) {
+                curr = curr.next;
+            }
+            
+            newNode.next = curr.next;
+            curr.next = newNode;
+            size++;
         }
-        size++;
     }
 
 
-    // Deletes the first node = O(1)
+    // Deletes the first node --> O(1)
     public void deleteFirst() {
         if (head == null) {
             System.out.println("List is empty!");
@@ -77,7 +84,7 @@ public class MyLinkedList<T> {
     }
 
 
-    // Deletes the last node = O(n)
+    // Deletes the last node --> O(n)
     public void deleteLast() {
         if (head == null) {
             System.out.println("List is empty!");
@@ -98,7 +105,7 @@ public class MyLinkedList<T> {
     }    
 
 
-    // Returns the first element = O(1)
+    // Returns the first element --> O(1)
     public T getFirst() {
         if (head == null) {
             System.out.println("List is empty!");
@@ -110,7 +117,7 @@ public class MyLinkedList<T> {
     }
 
     
-    // Returns the last element = O(1)
+    // Returns the last element --> O(1)
     public T getLast() {
         if (head == null) {
             System.out.println("List is empty!");
@@ -122,13 +129,13 @@ public class MyLinkedList<T> {
     }
 
 
-    // Returns the size of the linked list = O(1)
+    // Returns the size of the linked list --> O(1)
     public int size() {
         return size;
     }
 
 
-    // Prints the linked list = O(n)
+    // Prints the linked list --> O(n)
     public void printList() {
         if (head == null) {
             System.out.println("List is empty!");
@@ -161,6 +168,5 @@ public class MyLinkedList<T> {
         }
 
         ll.printList();
-        System.out.println(ll.size());
     }
 }
