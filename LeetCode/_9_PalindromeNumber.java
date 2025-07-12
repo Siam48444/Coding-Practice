@@ -14,7 +14,6 @@ class _9_PalindromeNumber {
         }
 
         int reversedHalf = 0;
-
         while (x > reversedHalf) {
             int lastDigit = x % 10;   // Get last digit of x
             reversedHalf = reversedHalf * 10 + lastDigit;   // Add last digit to reversedHalf
