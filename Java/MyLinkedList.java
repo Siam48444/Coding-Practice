@@ -237,7 +237,5 @@ public class MyLinkedList<T> {
         }
 
         ll.printList();
-        ll.reverse();
-        ll.printList();
     }
 }
