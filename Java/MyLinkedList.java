@@ -184,6 +184,22 @@ public class MyLinkedList<T> {
     }
 
 
+    // Reverses the linked list --> O(n)
+    public void reverse() {
+        Node prev = null;
+        Node curr = head;
+        tail = head;   // old head becomes new tail
+
+        while (curr != null) {
+            Node nextNode = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = nextNode;
+        }
+        head = prev;   // New head is the last node
+    }
+
+
     // Prints the linked list --> O(n)
     public void printList() {
         if (head == null) {
@@ -216,6 +232,8 @@ public class MyLinkedList<T> {
             ll.addLast(i);
         }
 
+        ll.printList();
+        ll.reverse();
         ll.printList();
     }
 }
