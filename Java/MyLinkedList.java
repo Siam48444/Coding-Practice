@@ -186,6 +186,10 @@ public class MyLinkedList<T> {
 
     // Reverses the linked list --> O(n)
     public void reverse() {
+        if (head == null || head.next == null) {
+            return;
+        }
+
         Node prev = null;
         Node curr = head;
         tail = head;   // old head becomes new tail
