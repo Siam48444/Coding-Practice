@@ -1,7 +1,5 @@
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost/mydatabase");
-
 const userSchema = mongoose.Schema({
     name: String,
     username: String,
