@@ -1,6 +1,13 @@
 #include <stdio.h>
 
 
+void printBoard(int board[][9]) {
+    char horizontal_line[] = "-------------------------";
+    char vertical_line[] = "|";
+    char empty_cell[] = ".";
+}
+
+
 int main() {
     int board[][9] = {
         {1, 0, 0,  0, 7, 0,  0, 0, 2},
@@ -16,5 +23,6 @@ int main() {
         {4, 0, 0,  0, 8, 0,  0, 0, 3}
     };
 
+    
     return 0;
 }
