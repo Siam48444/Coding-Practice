@@ -19,8 +19,15 @@ void printBoard(int board[][9]) {
             if (board[row][col] == 0) {
                 printf("%s ", empty_cell);
             }
+            else {
+                printf("%d ", board[row][col]);
+            }
         }
+
+        printf("%s\n", vertical_line);
     }
+
+    printf("%s\n", horizontal_line);
 }
 
 
