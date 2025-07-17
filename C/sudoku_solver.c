@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 
+// Method to print a formatted Sudoku board
 void printBoard(int board[][9]) {
     char horizontal_line[] = "-------------------------";
     char vertical_line[] = "|";
@@ -29,7 +30,31 @@ void printBoard(int board[][9]) {
 }
 
 
+// Recursive backtracking method to solve the Sudoku board
+int is_solved(int board[][9], int row, int col) {
+    int new_row = (col == 8) ? row + 1 : row;
+    int new_col = (col == 8) ? 0 : col + 1;
 
+    if (board[row][col] != 0) {
+        if (is_solved(board, new_row, new_col)) {
+            return 1;
+        }
+    }
+    else {
+        for (int n = 1; n <= 9; n++) {
+            if (is_valid_num(board, row, col, n)) {
+                board[row][col] = n;
+
+                if (is_solved(board, new_row, new_col)) {
+                    return 1;
+                }
+                else {
+                    board[row][col] = 0;
+                }
+            }
+        }
+    }
+}
 
 
 int main() {
