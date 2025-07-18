@@ -2,7 +2,7 @@
 
 
 // Method to print a formatted Sudoku board
-void printBoard(int board[][9]) {
+void print_board(int board[][9]) {
     char horizontal_line[] = "-------------------------";
     char vertical_line[] = "|";
     char empty_cell[] = ".";
@@ -27,6 +27,31 @@ void printBoard(int board[][9]) {
         printf("%s\n", vertical_line);
     }
     printf("%s\n", horizontal_line);
+}
+
+
+// Checks whether placing number n at board[row][col] is valid
+int is_valid_num(int board[][9], int row, int col, int n) {
+    for (int i = 0; i < 9; i++) {
+        if (board[row][i] == n) {
+            return 0;
+        }
+        if (board[i][col] == n) {
+            return 0;
+        }
+    }
+
+    int start_row = (row / 3) * 3;
+    int start_col = (col / 3) * 3;
+    for (int i = start_row; i < start_row + 3; i++) {
+        for (int j = start_col; j < start_col + 3; j++) {
+            if (board[i][j] == n) {
+                return 0;
+            }
+        }
+    }
+
+    return 1;
 }
 
 
@@ -59,28 +84,15 @@ int is_solved(int board[][9], int row, int col) {
 }
 
 
-// Checks whether placing number n at board[row][col] is valid
-int is_valid_num(int board[][9], int row, int col, int n) {
-    for (int i = 0; i < 9; i++) {
-        if (board[row][i] == n) {
-            return 0;
-        }
-        if (board[i][col] == n) {
-            return 0;
-        }
+// Prints the solved sudoku board (if exists)
+void print_solved_board(int board[][9]) {
+    if (is_solved(board, 0, 0)) {
+        printf("Solved:\n");
+        print_board(board);
     }
-
-    int start_row = (row / 3) * 3;
-    int start_col = (col / 3) * 3;
-    for (int i = start_row; i < start_row + 3; i++) {
-        for (int j = start_col; j < start_col + 3; j++) {
-            if (board[i][j] == n) {
-                return 0;
-            }
-        }
+    else {
+        printf("No solution exists!\n");
     }
-
-    return 1;
 }
 
 
@@ -99,7 +111,8 @@ int main() {
         {5, 0, 7,   0, 0, 0,   0, 0, 0}
     };
 
-    printBoard(board);
+    print_board(board);
+    print_solved_board(board);
 
     
     return 0;
