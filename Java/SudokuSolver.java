@@ -21,7 +21,7 @@ public class SudokuSolver {
         // Strings for drawing the grid
         String horizontalLine = "-------------------------";
         String verticalLine = "|";
-        String emptyCell = " ";
+        String emptyCell = ".";
 
         // Loop through each row
         for (int row = 0; row < board.length; row++) {
