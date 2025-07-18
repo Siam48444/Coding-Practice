@@ -54,6 +54,33 @@ int is_solved(int board[][9], int row, int col) {
             }
         }
     }
+
+    return 0;
+}
+
+
+// Checks whether placing number n at board[row][col] is valid
+int is_valid_num(int board[][9], int row, int col, int n) {
+    for (int i = 0; i < 9; i++) {
+        if (board[row][i] == n) {
+            return 0;
+        }
+        if (board[i][col] == n) {
+            return 0;
+        }
+    }
+
+    int start_row = (row / 3) * 3;
+    int start_col = (col / 3) * 3;
+    for (int i = start_row; i < start_row + 3; i++) {
+        for (int j = start_col; j < start_col + 3; j++) {
+            if (board[i][j] == n) {
+                return 0;
+            }
+        }
+    }
+
+    return 1;
 }
 
 
