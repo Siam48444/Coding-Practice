@@ -57,6 +57,8 @@ int is_valid_num(int board[][9], int row, int col, int n) {
 
 // Recursive backtracking method to solve the Sudoku board
 int is_solved(int board[][9], int row, int col) {
+    if (row == 9) return 1;
+
     int new_row = (col == 8) ? row + 1 : row;
     int new_col = (col == 8) ? 0 : col + 1;
 
@@ -98,20 +100,17 @@ void print_solved_board(int board[][9]) {
 
 int main() {
     int board[][9] = {
-        {0, 0, 0,   0, 0, 0,   8, 0, 5},
-        {0, 0, 0,   0, 0, 2,   0, 0, 0},
-        {0, 0, 0,   6, 0, 0,   0, 0, 0},
-
-        {0, 0, 0,   0, 0, 0,   1, 0, 0},
-        {9, 0, 0,   0, 4, 0,   0, 0, 7},
-        {0, 0, 3,   0, 0, 0,   0, 0, 0},
-
-        {0, 0, 0,   0, 0, 9,   0, 0, 0},
-        {0, 0, 0,   4, 0, 0,   0, 0, 0},
-        {5, 0, 7,   0, 0, 0,   0, 0, 0}
+        {1, 0, 0, 0, 7, 0, 0, 0, 2},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {5, 0, 0, 0, 9, 0, 0, 0, 6},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {4, 0, 0, 0, 8, 0, 0, 0, 3}
     };
 
-    print_board(board);
     print_solved_board(board);
 
     
