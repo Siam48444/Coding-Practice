@@ -6,7 +6,7 @@ int search(int* nums, int numsSize, int target) {
     int right = numsSize - 1;
 
     while (left <= right) {
-        int mid = (left + right) / 2;
+        int mid = left + (right - left) / 2;
 
         if (nums[mid] == target) {
             return mid;
@@ -17,15 +17,17 @@ int search(int* nums, int numsSize, int target) {
         else {
             right = mid - 1;
         }
-
-        return -1;
     }
+
+    return -1;
 }
 
 int main() {
-    int test1 = {-1,0,3,5,9,12};
-    int test2 = {-1,0,3,5,9,12};
+    int test1[] = {-1, 0, 3, 5, 9, 12};
+    int test2[] = {-1, 0, 3, 5, 9, 12};
+    int test3[] = {};
 
-    printf("%d", search(test1, 6, 9));
-    printf("%d", search(test2, 6, 2));
+    printf("%d\n", search(test1, 6, 9));
+    printf("%d\n", search(test2, 6, 2));
+    printf("%d\n", search(test3, 0, 5));
 }
