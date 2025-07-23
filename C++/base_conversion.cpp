@@ -1,6 +1,7 @@
 #include <iostream>
 
 
+
 int decimal_to_binary(int dec) {
     int bin = 0;
     int place = 1;
@@ -15,11 +16,16 @@ int decimal_to_binary(int dec) {
     return bin;
 }
 
+
+int binary_to_decimal(int bin) {
+
+}
+
+
 int main() {
-    for (int i = 0; i <= 20; i++) {
+    for (int i = 0; i <= 10; i++) {
         std::cout << i << "  -->  " << decimal_to_binary(i) << "\n";
     }
-
 
     return 0;
 }
