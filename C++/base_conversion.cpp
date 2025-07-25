@@ -1,7 +1,6 @@
 #include <iostream>
 
 
-
 // Function to convert a decimal number to binary
 int decimal_to_binary(int decimal) {
     int binary = 0;
@@ -63,6 +62,7 @@ int main() {
             << decimal_to_binary(i) << "\t\t" 
             << decimal_to_octal(i) << "\n";
     }
+    
 
     return 0;
 }
