@@ -10,11 +10,11 @@ class Sudoku:
     def print_board(self, show_heading=True):
         '''Prints the current Sudoku board in a readable 9x9 grid.'''
         if show_heading:
-            cprint("The given sudoku puzzle:", "blue")
+            cprint("The given sudoku puzzle:", "red")
 
         horizontal_line = "-" * 25
         vertical_line = "|"
-        empty_cell = "."
+        empty_cell = " "
         for (i, row) in enumerate(self.board):
             if i % 3 == 0:
                 print(horizontal_line)
